@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <!--标题栏-->
+    <include layout="@layout/titlebar"/>
+    <!--framelayout-->
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        >
+
+    </FrameLayout>
+    <!--底部radiogroup-->
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:padding="5dp"
+        android:background="#f7f7f7"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_param_frame"
+            android:drawableTop="@drawable/sur_param_selector"
+            style="@style/RG_Main_Style"
+            android:text="环境参数"/>
+
+        <RadioButton
+            android:id="@+id/rb_curdata_frame"
+            android:drawableTop="@drawable/cur_data_selector"
+            style="@style/RG_Main_Style"
+            android:text="当前数据"/>
+
+        <RadioButton
+            android:id="@+id/rb_hisdata_frame"
+            android:drawableTop="@drawable/his_data_selector"
+            style="@style/RG_Main_Style"
+            android:text="历史数据"/>
+    </RadioGroup>
+
+</LinearLayout>
