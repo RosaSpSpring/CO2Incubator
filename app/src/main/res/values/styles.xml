@@ -19,5 +19,12 @@
         <item name="android:textColor">@drawable/sur_param_textcolor_selector</item>
         <item name="android:layout_weight">1</item>
     </style>
+    <!--历史数据中的条件检索-->
+    <style name="my_his_ser_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
 
 </resources>

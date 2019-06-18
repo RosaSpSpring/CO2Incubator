@@ -18,10 +18,17 @@ public class LaunchActivity extends Activity {
 			@Override
 			public void run() {
 				//此方法在主线程中运行
-				startMainActivity();
+//				startMainActivity();
+				startLoginActivity();
 			}
-		} , 2000);
 
+		} , 500);
+
+	}
+
+	private void startLoginActivity() {
+		startActivity( new Intent( LaunchActivity.this,LoginActivity.class ) );
+		finish();
 	}
 
 	private void startMainActivity() {

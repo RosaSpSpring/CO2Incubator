@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
     <!--标题栏-->
-    <include layout="@layout/titlebar"/>
+
     <!--framelayout-->
     <FrameLayout
         android:id="@+id/fl_content"
@@ -26,7 +26,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp">
 
         <RadioButton
             android:id="@+id/rb_param_frame"

@@ -20,7 +20,7 @@ public abstract class BaseFragment extends Fragment {
 	/**
 	 * 上下文初始化视图时要用
 	 */
-	private Context mContext;
+	protected Context mContext;
 
 	@Override
 	public void onCreate(@Nullable Bundle savedInstanceState) {

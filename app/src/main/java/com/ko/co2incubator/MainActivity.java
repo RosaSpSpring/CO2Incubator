@@ -29,7 +29,7 @@ public class MainActivity extends FragmentActivity {
 	private int position;
 
 	//上次切换的fragment
-	private Fragment from;
+	private Fragment mFragment;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate( savedInstanceState );
@@ -72,17 +72,13 @@ public class MainActivity extends FragmentActivity {
 			switch (checkedId) {
 			    case R.id.rb_param_frame :
 			    	position = 0;
-
 			        break;
 			    case R.id.rb_curdata_frame :
 					position = 1;
-
 			        break;
 			    case R.id.rb_hisdata_frame :
 					position = 2;
-
 			        break;
-
 			    default:
 			    	position = 0;
 			        break;
@@ -90,7 +86,7 @@ public class MainActivity extends FragmentActivity {
 			//根据位置得到对应的fragment
 			BaseFragment to = getFragment();
 			//替换对应的fragment填充到帧布局中
-			switchFragment(from,to);
+			switchFragment(mFragment,to);
 		}
 	}
 
@@ -101,7 +97,7 @@ public class MainActivity extends FragmentActivity {
 	 */
 	private void switchFragment(Fragment from,Fragment to) {
 		if (from != to){
-			from = to;
+			mFragment = to;
 			//得到fragmentManager
 			//开启事务
 			FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -119,6 +115,10 @@ public class MainActivity extends FragmentActivity {
 				}
 			}else {
 				//to已经被添加
+				//隐藏from
+				if (from != null){
+					ft.hide( from );
+				}
 
 				//显示to
 				if (to != null) {
