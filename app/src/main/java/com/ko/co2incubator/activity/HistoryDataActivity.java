@@ -21,6 +21,10 @@ public class HistoryDataActivity extends Activity {
 	@BindView(R.id.iv_his_con_ser_back)
 	ImageView mIvHisConSerBack;
 
+	/**
+	 * 历史数据gittest
+	 * @param savedInstanceState
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate( savedInstanceState );
