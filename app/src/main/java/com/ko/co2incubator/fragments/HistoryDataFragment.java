@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.ko.co2incubator.Adapter.MyHisDataAdapter;
 import com.ko.co2incubator.R;
 import com.ko.co2incubator.activity.HistoryDataActivity;
 import com.ko.co2incubator.base.BaseFragment;
@@ -39,7 +40,8 @@ public class HistoryDataFragment extends BaseFragment {
 	protected View initView() {
 		View view = View.inflate( mContext, R.layout.fragment_historydata_layout, null );
 		mSearchHis = view.findViewById( R.id.search_his );
-		mSearchHis.setOnClickListener( new MyOnClickListener() );
+		mLvCurData = view.findViewById( R.id.lv_his_data );
+		mSearchHis.setOnClickListener( new MyOnClickListener());
 		Log.e( TAG, "历史数据页面初始化了" );
 		return view;
 	}
@@ -47,8 +49,8 @@ public class HistoryDataFragment extends BaseFragment {
 	@Override
 	protected void initData() {
 		super.initData();
+//		mLvCurData.setAdapter(new MyHisDataAdapter());
 	}
-
 
 
 	@Override
@@ -60,7 +62,7 @@ public class HistoryDataFragment extends BaseFragment {
 	private class MyOnClickListener implements View.OnClickListener {
 		@Override
 		public void onClick(View v) {
-			startActivity( new Intent( mContext, HistoryDataActivity.class) );
+			startActivity( new Intent( mContext, HistoryDataActivity.class));
 		}
 	}
 }

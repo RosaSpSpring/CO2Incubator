@@ -241,8 +241,8 @@
             android:layout_width="0dp"
             android:layout_height="71dp">
             <TextView
-                android:layout_weight="2"
                 android:id="@+id/co2_set_point_2"
+                android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:gravity="right"
