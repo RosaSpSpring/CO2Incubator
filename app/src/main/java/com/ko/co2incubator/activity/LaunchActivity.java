@@ -27,7 +27,8 @@ public class LaunchActivity extends Activity {
 	}
 
 	private void startLoginActivity() {
-		startActivity( new Intent( LaunchActivity.this,LoginActivity.class ) );
+//		startActivity( new Intent( LaunchActivity.this,LoginActivity.class ) );
+		startActivity( new Intent( LaunchActivity.this,MainActivity.class ) );
 		finish();
 	}
 
