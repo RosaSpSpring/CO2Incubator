@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"/>
+    <!--标题布局-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_weight="2"
+            android:text=""
+            style="@style/enpandablelistview_children_layout_style"
+            />
+        <TextView
+            android:id="@+id/tv_item_daici"
+            android:layout_weight="1"
+            android:text="代次"
+            style="@style/enpandablelistview_children_layout_style"
+            />
+
+        <TextView
+            android:id="@+id/tv_item_caozuo"
+            android:layout_weight="1"
+            android:text="操作"
+           style="@style/enpandablelistview_children_layout_style"
+            />
+
+        <TextView
+            android:id="@+id/tv_item_pingshu"
+            android:layout_weight="1"
+            android:text="瓶数"
+            style="@style/enpandablelistview_children_layout_style"
+            />
+
+        <TextView
+            android:id="@+id/tv_item_date"
+            android:layout_weight="2"
+            android:text="日期"
+            style="@style/enpandablelistview_children_layout_style"
+            />
+
+        <TextView
+            android:id="@+id/tv_item_operator"
+            android:layout_weight="2"
+            android:text="操作人"
+            style="@style/enpandablelistview_children_layout_style"
+            />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
