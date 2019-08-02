@@ -9,12 +9,13 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.ko.co2incubator.R;
-import com.ko.co2incubator.bean.CO2AlarmBean;
+import com.ko.co2incubator.bean.AlarmBean;
+
+import java.util.Collections;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import java.util.List;
 
 import static com.ko.co2incubator.fragments.EnvironmentParamFragment.TAG;
 
@@ -28,13 +29,13 @@ import static com.ko.co2incubator.fragments.EnvironmentParamFragment.TAG;
 public class HistoryAlarmAdapter extends BaseAdapter {
 
 	private Context mContext;
-	private List<CO2AlarmBean.ResultsBean> mDatas;
+	private List<AlarmBean.DataBean> mDatas;
 	private LayoutInflater mLayoutInflater;
 
-	public HistoryAlarmAdapter(Context context, List<CO2AlarmBean.ResultsBean> co2_alarm) {
+	public HistoryAlarmAdapter(Context context, List<AlarmBean.DataBean> alarm) {
 		this.mContext = context;
 		mLayoutInflater = LayoutInflater.from( context );
-		this.mDatas = co2_alarm;
+		this.mDatas = alarm;
 	}
 
 	@Override
@@ -61,26 +62,57 @@ public class HistoryAlarmAdapter extends BaseAdapter {
 			convertView = inflater.inflate( R.layout.lv_co2_history_alarm_data_layout, parent, false );
 			mHolder = new ViewHolder();
 			convertView.setTag( mHolder );
-			mHolder.mCo2Lv = convertView.findViewById( R.id.co2_lv );
-			mHolder.mCo2AlarmTime = convertView.findViewById( R.id.co2_alarm_time );
+			mHolder.mTypeTv = convertView.findViewById( R.id.type_tv );
+			mHolder.mTypeTvData = convertView.findViewById( R.id.type_tv_data );
+
+			mHolder.mAlarmTime = convertView.findViewById( R.id.alarm_time );
 
 		} else {
 			mHolder = (ViewHolder) convertView.getTag();
 		}
-		CO2AlarmBean.ResultsBean resultsBean = mDatas.get( position );
-		Log.e(TAG, "CO2的值》》》》》》》》》》》》》》》》》》》》" + resultsBean.getCo2());
-		mHolder.mCo2Lv.setText( resultsBean.getCo2() );
-		mHolder.mCo2AlarmTime.setText( resultsBean.getDate() );
+		Collections.sort( mDatas );
+		AlarmBean.DataBean resultsBean = mDatas.get( position );
+
+//		mHolder.mTypeTv.setText( resultsBean.getW_type() );
+		//CO₂
+        if (resultsBean.getW_type().equals( "mainTemperatureAnomaly" )){
+
+			mHolder.mTypeTv.setText( "主温" );
+			if (resultsBean.getW_num() > 0){
+				mHolder.mTypeTvData.setText( "超温" );
+			}else{
+				mHolder.mTypeTvData.setText( "欠温" );
+			}
+			mHolder.mAlarmTime.setText( resultsBean.getW_date() );
+		}else if (resultsBean.getW_type().equals( "doorTemperatureAnomaly" )) {
+			mHolder.mTypeTv.setText( "门温" );
+			if (resultsBean.getW_num() > 0){
+				mHolder.mTypeTvData.setText( "超温" );
+			}else{
+				mHolder.mTypeTvData.setText( "欠温" );
+			}
+			mHolder.mAlarmTime.setText( resultsBean.getW_date() );
+		} else if (resultsBean.getW_type().equals( "abnormalConcentration" )){
+			mHolder.mTypeTv.setText( "浓度" );
+			if (resultsBean.getW_num() > 0){
+				mHolder.mTypeTvData.setText( "超浓度" );
+			}else{
+				mHolder.mTypeTvData.setText( "欠浓度" );
+			}
+			mHolder.mAlarmTime.setText( resultsBean.getW_date() );
+		}
 
 		return convertView;
 	}
 
 
 	static class ViewHolder {
-		@BindView(R.id.co2_lv)
-		TextView mCo2Lv;
-		@BindView(R.id.co2_alarm_time)
-		TextView mCo2AlarmTime;
+		@BindView(R.id.type_tv)
+		TextView mTypeTv;
+		@BindView(R.id.type_tv_data)
+		TextView mTypeTvData;
+		@BindView(R.id.alarm_time)
+		TextView mAlarmTime;
 
 		ViewHolder(View view) {
 			ButterKnife.bind( this, view );

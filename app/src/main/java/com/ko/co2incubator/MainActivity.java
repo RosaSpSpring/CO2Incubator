@@ -1,12 +1,15 @@
 package com.ko.co2incubator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
+import com.ko.co2incubator.Screen.ScreenAdapterUtils;
 import com.ko.co2incubator.base.BaseFragment;
 import com.ko.co2incubator.fragments.CurrentDataFragment;
 import com.ko.co2incubator.fragments.EnvironmentParamFragment;
@@ -33,10 +36,9 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate( savedInstanceState );
+		ScreenAdapterUtils.setCusomDensity(this, getApplication());
 		initView();
-
 		initFragment();
-
 		//设置RadioGroup的监听
 		setListener();
 
@@ -133,5 +135,34 @@ public class MainActivity extends FragmentActivity {
 	private BaseFragment getFragment() {
 		BaseFragment fragment = mBaseFragment.get( position );
 		return fragment;
+	}
+
+
+
+
+	//利用时间差实现双击回退键退出当前应用
+	private long mExitTime;
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			exit();
+			return false;
+		} else {
+			return super.onKeyDown( keyCode, event );
+		}
+
+	}
+
+	public void exit() {
+		if ((System.currentTimeMillis() - mExitTime) > 2000) {
+			Toast.makeText( this, "再按一次退出程序", Toast.LENGTH_SHORT ).show();
+			mExitTime = System.currentTimeMillis();
+		} else {
+			Intent intent = new Intent( Intent.ACTION_MAIN );
+			intent.addCategory( Intent.CATEGORY_HOME );
+			startActivity( intent );
+			System.exit( 0 );
+		}
 	}
 }
