@@ -18,7 +18,6 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-
 import com.example.weeboos.permissionlib.PermissionRequest;
 import com.ko.co2incubator.Screen.ScreenAdapterUtils;
 import com.ko.co2incubator.activity.LoginActivity;
@@ -51,11 +50,9 @@ public class LaunchActivity extends AppCompatActivity implements ActivityCompat.
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate( savedInstanceState );
 		getSupportActionBar().hide();//隐藏标题栏
-		getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,
-				WindowManager.LayoutParams.FLAG_FULLSCREEN); // 隐藏状态栏
-
+		getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN ); // 隐藏状态栏
 		setContentView( R.layout.activity_lanuch );
-		ScreenAdapterUtils.setCusomDensity(this, getApplication());
+		ScreenAdapterUtils.setCusomDensity( this, getApplication());
 
 		getWindow().setFormat( PixelFormat.TRANSLUCENT );
 		videoView = findViewById( R.id.video_view );
@@ -70,7 +67,7 @@ public class LaunchActivity extends AppCompatActivity implements ActivityCompat.
 		request.requestPermission( new PermissionRequest.PermissionListener() {
 			@Override
 			public void permissionGranted() {
-                playVideo();
+				playVideo();
 			}
 
 			@Override
@@ -80,10 +77,9 @@ public class LaunchActivity extends AppCompatActivity implements ActivityCompat.
 
 			@Override
 			public void permissionNeverAsk(ArrayList<String> permissions) {
-				Toast.makeText(LaunchActivity.this,"建议同意获取权限", Toast.LENGTH_SHORT).show();
+				Toast.makeText( LaunchActivity.this, "建议同意获取权限", Toast.LENGTH_SHORT ).show();
 			}
 		}, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE} );
-
 
 
 	}

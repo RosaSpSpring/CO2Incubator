@@ -9,11 +9,12 @@
     </style>
     <!--底部导航栏的RadioGroup的style-->
     <style name="RG_Main_Style">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:drawablePadding">3dp</item>
         <item name="android:textSize">10sp</item>
         <item name="android:gravity">center</item>
+        <item name="android:paddingTop">5dp</item>
         <item name="android:button">@android:color/transparent</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:textColor">@drawable/sur_param_textcolor_selector</item>
@@ -33,7 +34,7 @@
         <item name="android:layout_marginLeft">0.1dp</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">#101010</item>
-        <item name="android:textSize">13dp</item>
+        <item name="android:textSize">13sp</item>
         <item name="android:background">@drawable/textview_border</item>
     </style>
     <!--当前数据和历史数据adapter孩子布局-->
