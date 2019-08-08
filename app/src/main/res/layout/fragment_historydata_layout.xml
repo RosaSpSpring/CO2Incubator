@@ -1,113 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:orientation="vertical">
-    <include layout="@layout/titlebar3"/>
-    <!--空格布局-->
-    <LinearLayout
-        android:background="@android:color/white"
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="6dp"/>
-    <LinearLayout
-        android:background="#CCCCCC"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="16"
+        android:background="@color/color_title"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:id="@+id/title3_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="4dp"
+            android:text="历史数据"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/search_his"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:padding="10dp"
+            android:src="@drawable/search"
+            tools:ignore="ContentDescription"/>
+    </RelativeLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:orientation="horizontal">
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#CCCCCC"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:background="#ffffff">
+
         <TextView
-            android:layout_weight="2"
-            android:layout_width="0dp"
-            android:gravity="center"
+            android:id="@+id/textmingchengpici_constraint"
             android:layout_height="match_parent"
-            android:text="名称/批次"
+            android:layout_width="0dp"
             android:background="#DFDFDF"
+            android:gravity="center"
+            android:text="名称/批次"
             android:textColor="#101010"
             android:textSize="13sp"
             android:textStyle="bold"
-            />
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:gravity="center"
-            android:layout_height="match_parent"
-            android:text="代次"
-            android:background="#DFDFDF"
-            android:layout_marginLeft="0.1dp"
-            android:textColor="#101010"
-            android:textSize="13dp"
-            android:textStyle="bold"
-            />
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:gravity="center"
-            android:layout_height="match_parent"
-            android:text="操作"
-            android:background="#DFDFDF"
-            android:layout_marginLeft="0.1dp"
-            android:textColor="#101010"
-            android:textSize="13dp"
-            android:textStyle="bold"
-            />
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:gravity="center"
-            android:layout_height="match_parent"
-            android:text="瓶数"
-            android:background="#DFDFDF"
-            android:layout_marginLeft="0.1dp"
-            android:textColor="#101010"
-            android:textSize="13dp"
-            android:textStyle="bold"
-            />
-        <TextView
-            android:layout_weight="2"
-            android:layout_width="0dp"
-            android:gravity="center"
-            android:layout_height="match_parent"
-            android:text="日期"
-            android:background="#DFDFDF"
-            android:layout_marginLeft="0.1dp"
-            android:textColor="#101010"
-            android:textSize="13dp"
-            android:textStyle="bold"
-            />
-        <TextView
-            android:layout_weight="2"
-            android:layout_width="0dp"
-            android:gravity="center"
-            android:layout_height="match_parent"
-            android:text="操作人"
-            android:background="#DFDFDF"
-            android:layout_marginLeft="0.1dp"
-            android:textColor="#101010"
-            android:textSize="13dp"
-            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/textdaici_constraint"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
             />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textdaici_constraint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0.1dp"
+            android:background="#DFDFDF"
+            android:gravity="center"
+            android:text="代次"
+            android:textColor="#101010"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/textmingchengpici_constraint"
+            app:layout_constraintRight_toLeftOf="@+id/textcaozuo_constraint"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            />
+
+        <TextView
+            android:id="@+id/textcaozuo_constraint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0.1dp"
+            android:background="#DFDFDF"
+            android:gravity="center"
+            android:text="操作"
+            android:textColor="#101010"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/textdaici_constraint"
+            app:layout_constraintRight_toLeftOf="@+id/textpingshu_constraint"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+
+            />
+
+        <TextView
+            android:id="@+id/textpingshu_constraint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0.1dp"
+            android:background="#DFDFDF"
+            android:gravity="center"
+            android:text="瓶数"
+            android:textColor="#101010"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/textcaozuo_constraint"
+            app:layout_constraintRight_toLeftOf="@+id/textdate_constraint"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            />
+
+        <TextView
+            android:id="@+id/textdate_constraint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0.1dp"
+            android:background="#DFDFDF"
+            android:gravity="center"
+            android:text="日期"
+            android:textColor="#101010"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintLeft_toRightOf="@+id/textpingshu_constraint"
+            app:layout_constraintRight_toLeftOf="@+id/textcaouoren_constraint"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+
+            />
+
+        <TextView
+            android:id="@+id/textcaouoren_constraint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0.1dp"
+            android:background="#DFDFDF"
+            android:gravity="center"
+            android:text="操作人"
+            android:textColor="#101010"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintLeft_toRightOf="@+id/textdate_constraint"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            />
+    </android.support.constraint.ConstraintLayout>
+
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/refreshLayout_his"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="159">
 
         <ExpandableListView
             android:id="@+id/expand_lv_history"
-            android:groupIndicator="@null"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:groupIndicator="@null">
 
         </ExpandableListView>
 
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-
-
 
 
 </LinearLayout>

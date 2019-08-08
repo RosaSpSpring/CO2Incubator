@@ -4,7 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/color_title</item>
-        <item name="colorPrimaryDark">@color/color_title</item>
+        <item name="colorPrimaryDark">@color/color_bar</item>
         <item name="colorAccent">@color/color_black</item>
     </style>
     <!--底部导航栏的RadioGroup的style-->
@@ -24,7 +24,7 @@
     <style name="my_his_ser_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
-        <item name="android:layout_weight">1</item>
+        <item name="android:layout_weight">33</item>
         <item name="android:orientation">horizontal</item>
     </style>
     <!--当前数据和历史数据adapter父亲布局-->

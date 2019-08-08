@@ -31,7 +31,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="5dp"
         android:layout_weight="15">
 
         <android.support.constraint.ConstraintLayout
@@ -43,6 +43,7 @@
                 android:id="@+id/wendushedingzhi_constraint"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:background="#BCEDFF"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/shidu_constraint"
                 app:layout_constraintHorizontal_chainStyle="packed"
@@ -97,6 +98,7 @@
                 android:id="@+id/shidu_constraint"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:background="#FFD3BC"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/wendushedingzhi_constraint"
                 app:layout_constraintHorizontal_chainStyle="packed"
@@ -110,6 +112,7 @@
                     android:gravity="center_vertical|end"
                     android:lines="1"
                     android:text="湿度:"
+                    android:layout_marginStart="17dp"
                     android:textColor="#D76F00"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -203,6 +206,7 @@
         android:background="#9DF0D6">
 
         <android.support.constraint.ConstraintLayout
+            android:background="#9DF0D6"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -332,7 +336,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="6dp"
         android:layout_weight="15"
         android:background="#f9f9f9"
         android:gravity="center_vertical"

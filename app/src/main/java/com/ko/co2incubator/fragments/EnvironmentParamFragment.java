@@ -126,7 +126,7 @@ public class EnvironmentParamFragment extends BaseFragment {
 	@Override
 	protected View initView() {
 		Log.e( TAG, "环境参数页面初始化了" );
-		ScreenAdapterUtils.setCusomDensity( (Activity) mContext, Objects.requireNonNull( getActivity() ).getApplication() );
+		ScreenAdapterUtils.setCusomDensity( (Activity) mContext, Objects.requireNonNull( getActivity()).getApplication());
 		View view = View.inflate( mContext, R.layout.fragment_environmentparam_layout, null );
 		mListView = view.findViewById( R.id.lv_his_alarm );
 		mCo2SetPoint2 = view.findViewById( R.id.co2_set_point_2 );
