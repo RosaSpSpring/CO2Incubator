@@ -5,7 +5,7 @@
         <shape android:shape="rectangle">
 
             <!-- android:radius 弧形的半径 -->
-            <corners android:radius="2dip" />
+            <corners android:radius="5dip" />
             <!-- padding：Button里面的文字与Button边界的间隔 -->
             <padding
                 android:left="10dp"
@@ -18,7 +18,7 @@
                 android:width="0dp"
                 android:color="#000000" />
             <!-- 背景色 -->
-            <solid android:color="#E6E6E6"></solid>
+            <solid android:color="#E6E6E6"/>
         </shape>
     </item>
     <item android:state_checked="true">
@@ -26,7 +26,7 @@
         <!---背景填充颜色-->
         <shape android:shape="rectangle">
             <!-- android:radius 弧形的半径 -->
-            <corners android:radius="2dip" />
+            <corners android:radius="5dip" />
             <!-- padding：Button里面的文字与Button边界的间隔 -->
             <padding
                 android:left="10dp"
@@ -39,7 +39,7 @@
                 android:width="0dp"
                 android:color="#000000" />
             <!-- 背景色 -->
-            <solid android:color="#AAAAAA"></solid>
+            <solid android:color="@color/color_title"/>
         </shape>
     </item>
 </selector>

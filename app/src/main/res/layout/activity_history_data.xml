@@ -21,7 +21,8 @@
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:padding="20dp"
-            android:src="@drawable/back"/>
+            android:src="@drawable/back"
+            tools:ignore="ContentDescription"/>
 
         <TextView
             android:id="@+id/his_title_text"
@@ -35,29 +36,42 @@
             android:textStyle="bold"/>
     </RelativeLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="0.1"
+        android:background="#F2F2F2"/>
+
     <LinearLayout
         style="@style/my_his_ser_style"
         >
-
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/pici_constraint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="9dp"
                 android:text="名称/批次"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+                app:layout_constraintBottom_toTopOf="@+id/et_his_input_pici"
                 app:layout_constraintEnd_toEndOf="@+id/et_his_input_pici"
+                app:layout_constraintStart_toStartOf="@+id/et_his_input_pici"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/et_his_input_pici"/>
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.197"
+                />
 
             <EditText
                 android:id="@+id/et_his_input_pici"
-                android:layout_width="160dp"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="16dp"
                 android:background="@drawable/bg_con_search_et"
@@ -73,32 +87,40 @@
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/et_his_input_daici"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.25"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintRight_toLeftOf="@+id/et_his_input_daici"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.6"
-                />
+                app:layout_constraintVertical_bias="0.55"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.444"
+                android:autofillHints="请输入名称/批次"/>
 
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="9dp"
                 android:text="代次"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/et_his_input_daici"
                 app:layout_constraintEnd_toEndOf="@+id/et_his_input_daici"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.2"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/et_his_input_daici"/>
+                app:layout_constraintStart_toStartOf="@+id/et_his_input_daici"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.089"/>
 
             <EditText
                 android:id="@+id/et_his_input_daici"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="12dp"
                 android:layout_marginBottom="8dp"
@@ -115,39 +137,54 @@
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.25"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintLeft_toRightOf="@+id/et_his_input_pici"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.6"/>
+                app:layout_constraintVertical_bias="0.55"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.444"
+                android:autofillHints="请输入代次"/>
         </android.support.constraint.ConstraintLayout>
 
-
     </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="0.1"
+        android:background="#F2F2F2"/>
 
     <LinearLayout
         style="@style/my_his_ser_style">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="15dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="9dp"
                 android:text="操作员"
                 android:textColor="#000000"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/et_his_input_operator"
+                app:layout_constraintEnd_toEndOf="@+id/et_his_input_operator"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/et_his_input_operator"
+                app:layout_constraintHeight_percent="0.22"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.133"
+                />
 
             <EditText
                 android:id="@+id/et_his_input_operator"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="9dp"
                 android:background="@drawable/bg_con_search_et"
                 android:hint="请输入操作员姓名"
@@ -159,124 +196,149 @@
                 android:paddingBottom="6dp"
                 android:text=""
                 android:textColorHint="#C4C4C4"
-                android:textSize="14sp"/>
-        </LinearLayout>
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.55"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.444"
+                android:autofillHints="请输入操作员姓名"/>
+        </android.support.constraint.ConstraintLayout>
+
+
     </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="0.1"
+        android:background="#F2F2F2"/>
 
     <LinearLayout
         style="@style/my_his_ser_style"
         android:baselineAligned="false">
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            >
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="15dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="9dp"
                 android:text="日期"
                 android:textColor="#000000"
-                android:textSize="16sp"/>
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="9dp"
-                android:orientation="horizontal"
-                >
-
-                <TextView
-                    android:id="@+id/tv_his_input_start_date"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:background="@drawable/bg_con_search_et"
-                    android:gravity="center_vertical"
-                    android:hint="请输入开始日期"
-                    android:lines="1"
-                    android:paddingStart="10dp"
-                    android:paddingTop="6dp"
-                    android:paddingEnd="5dp"
-                    android:paddingBottom="6dp"
-                    android:textColorHint="#C4C4C4"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-                <Button
-                    android:id="@+id/btn_his_input_start_date"
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginEnd="6dp"
-                    android:layout_marginBottom="2dp"
-                    android:background="@android:drawable/ic_menu_close_clear_cancel"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_his_input_start_date"
-                    app:layout_constraintEnd_toEndOf="@+id/tv_his_input_start_date"
-                    app:layout_constraintTop_toTopOf="@+id/tv_his_input_start_date"/>
-            </android.support.constraint.ConstraintLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_his_input_start_date"
+                app:layout_constraintEnd_toEndOf="@+id/tv_his_input_start_date"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tv_his_input_start_date"
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.089"
+                />
 
             <TextView
+                android:id="@+id/tv_his_input_start_date"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/bg_con_search_et"
+                android:gravity="center_vertical|start"
+                android:hint="请输入开始日期"
+                android:lines="1"
+                android:paddingStart="10dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="5dp"
+                android:paddingBottom="6dp"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.25"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintRight_toLeftOf="@+id/middle_divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.55"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.444"/>
+
+            <Button
+                android:id="@+id/btn_his_input_start_date"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_his_input_start_date"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@+id/tv_his_input_start_date"
+                app:layout_constraintTop_toTopOf="@+id/tv_his_input_start_date"/>
+
+            <TextView
+                android:id="@+id/middle_divider"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="15dp"
-                android:text=""
-                android:textColor="#000000"
-                android:textSize="16sp"/>
+                android:gravity="center"
+                android:text="--"
+                android:textColor="#BBBBBB"
+                android:textSize="16sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_his_input_start_date"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/tv_his_input_start_date"
+                app:layout_constraintRight_toLeftOf="@+id/tv_his_input_end_date"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.55"/>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="9dp"
-                >
+            <TextView
+                android:id="@+id/tv_his_input_end_date"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_con_search_et"
+                android:gravity="center_vertical"
+                android:hint="请输入结束日期"
+                android:lines="1"
+                android:paddingStart="10dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="5dp"
+                android:paddingBottom="6dp"
+                android:textColorHint="#C4C4C4"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_his_input_start_date"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.25"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@+id/middle_divider"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.55"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.444"/>
 
-                <TextView
-                    android:id="@+id/tv_his_input_end_date"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:background="@drawable/bg_con_search_et"
-                    android:gravity="center_vertical"
-                    android:hint="请输入结束日期"
-                    android:lines="1"
-                    android:paddingStart="10dp"
-                    android:paddingTop="6dp"
-                    android:paddingEnd="5dp"
-                    android:paddingBottom="6dp"
-                    android:textColorHint="#C4C4C4"
-                    android:textSize="14sp"/>
+            <Button
+                android:id="@+id/btn_his_input_end_date"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_his_input_end_date"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@+id/tv_his_input_end_date"
+                app:layout_constraintTop_toTopOf="@+id/tv_his_input_end_date"/>
 
-                <Button
-                    android:id="@+id/btn_his_input_end_date"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:layout_alignTop="@+id/tv_his_input_end_date"
-                    android:layout_alignEnd="@+id/tv_his_input_end_date"
-                    android:layout_alignRight="@+id/tv_his_input_end_date"
-                    android:layout_alignBottom="@+id/tv_his_input_end_date"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginEnd="6dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_marginBottom="1dp"
-                    android:background="@android:drawable/ic_menu_close_clear_cancel"
-                    android:visibility="invisible"/>
-            </RelativeLayout>
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+
     </LinearLayout>
 
     <TextView
@@ -284,40 +346,54 @@
         android:layout_height="0dp"
         android:layout_weight="58"/>
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="12"
-        android:orientation="horizontal">
+        >
+
 
         <Button
             android:id="@+id/tv_his_reset"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="0dp"
             android:background="@drawable/bg_reset_selector"
-            android:clickable="true"
-            android:focusable="true"
             android:gravity="center"
             android:padding="1dp"
             android:text="重置"
             android:textColor="#000000"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_his_complete"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.5"
+
+            />
 
         <Button
             android:id="@+id/tv_his_complete"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="0dp"
             android:background="@drawable/bg_complete_selector"
-            android:clickable="true"
-            android:focusable="true"
             android:gravity="center"
             android:padding="1dp"
             android:text="完成"
             android:textColor="#ffffff"
-            android:textSize="16sp"/>
-    </LinearLayout>
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/tv_his_reset"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.5"
+            />
+    </android.support.constraint.ConstraintLayout>
 
 
 </LinearLayout>

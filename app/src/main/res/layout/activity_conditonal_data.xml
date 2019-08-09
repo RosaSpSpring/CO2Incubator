@@ -7,77 +7,143 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/titlebar_cur_con_select"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="16"
+        android:background="@color/color_title"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_con_ser_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:padding="20dp"
+            android:src="@drawable/back"
+            tools:ignore="ContentDescription"/>
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="4dp"
+            android:text="条件检索"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:layout_weight="33">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="104dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="15dp"
+                android:id="@+id/pici_constraint"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="9dp"
                 android:text="名称/批次"
                 android:textColor="#000000"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+                app:layout_constraintBottom_toTopOf="@+id/et_input_pici"
+                app:layout_constraintEnd_toEndOf="@+id/et_input_pici"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/et_input_pici"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.197"
+                />
 
             <EditText
                 android:id="@+id/et_input_pici"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="9dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:autofillHints="请输入名称/批次"
                 android:background="@drawable/bg_con_search_et"
                 android:hint="请输入名称/批次"
                 android:inputType="text"
-                android:text=""
-                android:paddingLeft="10dp"
+                android:lines="1"
+                android:paddingStart="10dp"
                 android:paddingTop="6dp"
+                android:paddingEnd="5dp"
                 android:paddingBottom="6dp"
+                android:text=""
                 android:textColorHint="#C4C4C4"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/et_input_daici"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.25"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintRight_toLeftOf="@+id/et_input_daici"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.55"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.444"/>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="104dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="15dp"
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="9dp"
                 android:text="代次"
                 android:textColor="#000000"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/et_input_daici"
+                app:layout_constraintEnd_toEndOf="@+id/et_input_daici"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/et_input_daici"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.089"/>
 
             <EditText
                 android:id="@+id/et_input_daici"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="9dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="8dp"
+                android:autofillHints="请输入代次"
                 android:background="@drawable/bg_con_search_et"
                 android:hint="请输入代次"
-                android:text=""
                 android:inputType="text"
-                android:paddingLeft="10dp"
+                android:lines="1"
+                android:paddingStart="10dp"
                 android:paddingTop="6dp"
+                android:paddingEnd="5dp"
                 android:paddingBottom="6dp"
+                android:text=""
                 android:textColorHint="#C4C4C4"
-                android:textSize="14sp"/>
-        </LinearLayout>
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.25"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@+id/et_input_pici"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.55"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.444"/>
+        </android.support.constraint.ConstraintLayout>
 
     </LinearLayout>
 
@@ -90,50 +156,61 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="105dp"
-        android:layout_marginTop="18dp"
+        android:layout_height="0dp"
+        android:layout_weight="47"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginLeft="12dp"
-                android:layout_weight="3"
-                android:gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="9dp"
+                android:gravity="center_vertical|start"
                 android:text="日期"
                 android:textColor="#000000"
-                android:textSize="16dp"/>
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/rg1"
+                app:layout_constraintEnd_toEndOf="@+id/rg1"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.089"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/rg1"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.159"/>
 
             <RadioGroup
                 android:id="@+id/rg1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginTop="9dp"
-                android:layout_weight="4"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/rg2"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="spread"
+                >
 
                 <RadioButton
                     android:id="@+id/all_month"
                     style="@style/condition_search_radiobutton_style"
-                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
                     android:text="全部"/>
 
                 <RadioButton
                     android:id="@+id/one_month"
                     style="@style/condition_search_radiobutton_style"
-                    android:layout_marginLeft="18dp"
+                    android:layout_marginStart="18dp"
                     android:text="1个月"/>
 
                 <RadioButton
                     android:id="@+id/two_month"
                     style="@style/condition_search_radiobutton_style"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginRight="12dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="12dp"
                     android:text="2个月"/>
             </RadioGroup>
 
@@ -141,79 +218,97 @@
                 android:id="@+id/rg2"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginTop="18dp"
-                android:layout_weight="4"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintTop_toBottomOf="@+id/rg1"
+                app:layout_constraintVertical_chainStyle="spread"
+
+                >
 
                 <RadioButton
                     android:id="@+id/three_month"
                     style="@style/condition_search_radiobutton_style"
-                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
                     android:text="3个月"/>
 
                 <RadioButton
                     android:id="@+id/six_month"
                     style="@style/condition_search_radiobutton_style"
-                    android:layout_marginLeft="18dp"
+                    android:layout_marginStart="18dp"
                     android:text="6个月"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginRight="12dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="12dp"
                     android:layout_weight="1"
                     android:button="@null"
                     android:gravity="center"
                     android:padding="1dp"
                     android:text=""
                     android:textColor="#101010"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     android:textStyle="normal"/>
             </RadioGroup>
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:layout_weight="73"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12"
+        >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_alignParentBottom="true"
-                android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/tv_reset"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_reset_selector"
-                    android:gravity="center"
-                    android:padding="1dp"
-                    android:text="重置"
-                    android:textColor="#000000"
-                    android:textSize="16sp"/>
+        <Button
+            android:id="@+id/tv_reset"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_reset_selector"
+            android:gravity="center"
+            android:padding="1dp"
+            android:text="重置"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_complete"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.5"
 
-                <Button
-                    android:id="@+id/tv_complete"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_complete_selector"
-                    android:gravity="center"
-                    android:padding="1dp"
-                    android:text="完成"
-                    android:textColor="#ffffff"
-                    android:textSize="16sp"/>
-            </LinearLayout>
-        </RelativeLayout>
-    </LinearLayout>
+            />
+
+        <Button
+            android:id="@+id/tv_complete"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_complete_selector"
+            android:gravity="center"
+            android:padding="1dp"
+            android:text="完成"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/tv_reset"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.5"
+            />
+    </android.support.constraint.ConstraintLayout>
+
 
 </LinearLayout>
