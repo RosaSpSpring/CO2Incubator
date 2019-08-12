@@ -30,13 +30,11 @@
         <ImageView
             android:id="@+id/search_cur"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp"
-            android:padding="10dp"
+            android:padding="15dp"
             android:src="@drawable/search"
             tools:ignore="ContentDescription"/>
     </RelativeLayout>

@@ -70,7 +70,7 @@
                 android:id="@+id/et_input_pici"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="12dp"
                 android:autofillHints="请输入名称/批次"
                 android:background="@drawable/bg_con_search_et"
                 android:hint="请输入名称/批次"
@@ -157,7 +157,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="47"
+        android:layout_weight="50"
         android:orientation="vertical">
 
         <android.support.constraint.ConstraintLayout
@@ -176,7 +176,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/rg1"
                 app:layout_constraintEnd_toEndOf="@+id/rg1"
                 app:layout_constraintHeight_default="percent"
-                app:layout_constraintHeight_percent="0.089"
+                app:layout_constraintHeight_percent="0.1"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/rg1"
                 app:layout_constraintWidth_default="percent"
@@ -187,8 +187,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
-                app:layout_constraintBottom_toTopOf="@+id/rg2"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHeight_default="percent"
+                app:layout_constraintVertical_bias="0.3"
                 app:layout_constraintHeight_percent="0.2"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="spread"
@@ -220,9 +221,10 @@
                 android:layout_height="0dp"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.7"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintHeight_default="percent"
                 app:layout_constraintHeight_percent="0.2"
-                app:layout_constraintTop_toBottomOf="@+id/rg1"
                 app:layout_constraintVertical_chainStyle="spread"
 
                 >
@@ -259,7 +261,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="73"/>
+        android:layout_weight="70"/>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"

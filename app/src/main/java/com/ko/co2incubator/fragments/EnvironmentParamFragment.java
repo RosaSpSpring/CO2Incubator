@@ -153,7 +153,7 @@ public class EnvironmentParamFragment extends BaseFragment {
 		            new Thread( () -> {
 						while (true) {
 							try {
-								Thread.sleep( 2000 );
+								Thread.sleep( 5000 );
 							mhandler.sendMessage( mhandler.obtainMessage() );
 							} catch (InterruptedException e) {
 								e.printStackTrace();
