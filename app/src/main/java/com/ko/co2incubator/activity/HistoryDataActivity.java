@@ -85,17 +85,12 @@ public class HistoryDataActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate( savedInstanceState );
-		ScreenAdapterUtils.setCusomDensity(this, getApplication());
+		ScreenAdapterUtils.setCusomDensity( this, getApplication() );
 		setContentView( R.layout.activity_history_data );
 		ButterKnife.bind( this );
 
-//点击返回上一界面
-		mIvHisConSerBack.setOnClickListener( new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				HistoryDataActivity.this.finish();
-			}
-		} );
+		//点击返回上一界面
+		mIvHisConSerBack.setOnClickListener( v -> HistoryDataActivity.this.finish() );
 	}
 
 	@OnClick({R.id.tv_his_input_start_date, R.id.tv_his_input_end_date, R.id.tv_his_complete, R.id.tv_his_reset})
@@ -104,13 +99,7 @@ public class HistoryDataActivity extends Activity {
 			case R.id.tv_his_input_start_date:
 				//添加日历控件
 				if (mTvHisInputStartDate.getText().toString().trim().equals( "" )) {
-					DatePickerPopWin pickerPopWin = new DatePickerPopWin.Builder( HistoryDataActivity.this, new DatePickerPopWin.OnDatePickedListener() {
-						@Override
-						public void onDatePickCompleted(int year, int month, int day, String dateDesc) {
-							mTvHisInputStartDate.setText( dateDesc );
-
-						}
-					} ).textConfirm( "确认" ) //text of confirm button
+					DatePickerPopWin pickerPopWin = new DatePickerPopWin.Builder( HistoryDataActivity.this, (year, month, day, dateDesc) -> mTvHisInputStartDate.setText( dateDesc ) ).textConfirm( "确认" ) //text of confirm button
 							.textCancel( "取消" ) //text of cancel button
 							.btnTextSize( 16 ) // button text size
 							.viewTextSize( 25 ) // pick view text size
@@ -123,12 +112,9 @@ public class HistoryDataActivity extends Activity {
 					pickerPopWin.showPopWin( HistoryDataActivity.this );
 				} else if (!mTvHisInputStartDate.getText().toString().trim().toLowerCase().equals( "" ) && mTvHisInputStartDate != null) {
 					mBtnHisInputStartDate.setVisibility( View.VISIBLE );
-					mBtnHisInputStartDate.setOnClickListener( new View.OnClickListener() {
-						@Override
-						public void onClick(View v) {
-							mTvHisInputStartDate.setText( "" );
-							mBtnHisInputStartDate.setVisibility( View.GONE );
-						}
+					mBtnHisInputStartDate.setOnClickListener( v -> {
+						mTvHisInputStartDate.setText( "" );
+						mBtnHisInputStartDate.setVisibility( View.GONE );
 					} );
 
 				}
@@ -137,13 +123,7 @@ public class HistoryDataActivity extends Activity {
 			case R.id.tv_his_input_end_date:
 				//添加日历控件
 				if (mTvHisInputEndDate.getText().toString().trim().equals( "" )) {
-					DatePickerPopWin pickerPopWin = new DatePickerPopWin.Builder( HistoryDataActivity.this, new DatePickerPopWin.OnDatePickedListener() {
-						@Override
-						public void onDatePickCompleted(int year, int month, int day, String dateDesc) {
-							mTvHisInputEndDate.setText( dateDesc );
-
-						}
-					} ).textConfirm( "确认" ) //text of confirm button
+					DatePickerPopWin pickerPopWin = new DatePickerPopWin.Builder( HistoryDataActivity.this, (year, month, day, dateDesc) -> mTvHisInputEndDate.setText( dateDesc ) ).textConfirm( "确认" ) //text of confirm button
 							.textCancel( "取消" ) //text of cancel button
 							.btnTextSize( 16 ) // button text size
 							.viewTextSize( 25 ) // pick view text size
@@ -156,18 +136,15 @@ public class HistoryDataActivity extends Activity {
 					pickerPopWin.showPopWin( HistoryDataActivity.this );
 				} else if (!mTvHisInputEndDate.getText().toString().trim().toLowerCase().equals( "" ) && mTvHisInputEndDate != null) {
 					mBtnHisInputEndDate.setVisibility( View.VISIBLE );
-					mBtnHisInputEndDate.setOnClickListener( new View.OnClickListener() {
-						@Override
-						public void onClick(View v) {
-							mTvHisInputEndDate.setText( "" );
-							mBtnHisInputEndDate.setVisibility( View.GONE );
-						}
+					mBtnHisInputEndDate.setOnClickListener( v -> {
+						mTvHisInputEndDate.setText( "" );
+						mBtnHisInputEndDate.setVisibility( View.GONE );
 					} );
 
 				}
 
 				break;
-				//重置按钮重置所有view
+			//重置按钮重置所有view
 			case R.id.tv_his_reset:
 				mEtHisInputPici.setText( "" );
 				mEtHisInputDaici.setText( "" );
@@ -177,21 +154,21 @@ public class HistoryDataActivity extends Activity {
 				mBtnHisInputStartDate.setVisibility( View.INVISIBLE );
 				mBtnHisInputEndDate.setVisibility( View.INVISIBLE );
 				break;
-				//完成按钮,开始联网请求数据
+			//完成按钮,开始联网请求数据
 			case R.id.tv_his_complete:
-				Log.e(TAG, "点击完成搞定");
-                //之所以放在这里是当监听的时候,会发现文本是否变化才能得到确定的值
-				inputdaici =  mEtHisInputDaici.getText().toString().trim();
-				inputpihao =  mEtHisInputPici.getText().toString().trim();
-				inputoperator =  mEtHisInputOperator.getText().toString().trim();
-				his_start_date =  mTvHisInputStartDate.getText().toString().trim();
-				his_end_date =  mTvHisInputEndDate.getText().toString().trim();
-                //
-				if (his_start_date == "" && his_end_date != ""){
-					Toast.makeText(this,"请选择起始日期", Toast.LENGTH_SHORT).show();
-				}else if (his_start_date != "" && his_end_date == ""){
-					Toast.makeText(this,"请选择结束日期", Toast.LENGTH_SHORT).show();
-				}else{
+				Log.e( TAG, "点击完成搞定" );
+				//之所以放在这里是当监听的时候,会发现文本是否变化才能得到确定的值
+				inputdaici = mEtHisInputDaici.getText().toString().trim();
+				inputpihao = mEtHisInputPici.getText().toString().trim();
+				inputoperator = mEtHisInputOperator.getText().toString().trim();
+				his_start_date = mTvHisInputStartDate.getText().toString().trim();
+				his_end_date = mTvHisInputEndDate.getText().toString().trim();
+				//
+				if (his_start_date.equals( "" ) && !his_end_date.equals( "" )) {
+					Toast.makeText( this, "请选择起始日期", Toast.LENGTH_SHORT ).show();
+				} else if (!his_start_date.equals( "" ) && his_end_date.equals( "" )) {
+					Toast.makeText( this, "请选择结束日期", Toast.LENGTH_SHORT ).show();
+				} else {
 					dorequest();
 				}
 
@@ -202,15 +179,16 @@ public class HistoryDataActivity extends Activity {
 	private void dorequest() {
 		Retrofit build = new Retrofit.Builder().baseUrl( Constants.BASEURL ).addConverterFactory( GsonConverterFactory.create() ).build();
 		HisDataSearchIn hisDataSearchIn = build.create( HisDataSearchIn.class );
-		Call<ResponseBody> call = hisDataSearchIn.getHisDataSearch(  inputpihao,inputdaici, inputoperator, his_start_date, his_end_date );
+		Call<ResponseBody> call = hisDataSearchIn.getHisDataSearch( inputpihao, inputdaici, inputoperator, his_start_date, his_end_date );
 		call.enqueue( new Callback<ResponseBody>() {
 			@Override
 			public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 				try {
+					assert response.body() != null;
 					String json = response.body().string();
-					Log.e(TAG, "jsonjsonjsonjson" + json);
-					Log.e(TAG, "inputdaici" + inputdaici + "---------" + inputpihao + "-------------" + inputoperator + "---" + his_start_date + "-------" + his_end_date);
-					initData(json);
+					Log.e( TAG, "jsonjsonjsonjson" + json );
+					Log.e( TAG, "inputdaici" + inputdaici + "---------" + inputpihao + "-------------" + inputoperator + "---" + his_start_date + "-------" + his_end_date );
+					initData( json );
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -227,29 +205,28 @@ public class HistoryDataActivity extends Activity {
 	private void initData(String json) {
 		Result res = JSON.parseObject( json, Result.class );
 		Collections.sort( res.getData() );
-		List<Cell> cells = new ArrayList<Cell>();
-		for(Cell cell:res.getData()){
-			if(cell.getCid().equalsIgnoreCase("0")){
-				cells.add(cell);
+		List<Cell> cells = new ArrayList<>();
+		for (Cell cell : res.getData()) {
+			if (cell.getCid().equalsIgnoreCase( "0" )) {
+				cells.add( cell );
 				//                res.getData().remove(cell);
 			}
 		}
-		for(Cell c :res.getData()){
-			for(Cell root:cells){
-				if(c.getCid().equalsIgnoreCase(root.getId())){
-					root.getChildren().add(c);
+		for (Cell c : res.getData()) {
+			for (Cell root : cells) {
+				if (c.getCid().equalsIgnoreCase( root.getId() )) {
+					root.getChildren().add( c );
 					break;
 				}
 			}
 		}
 		if (cells.size() > 0) {
-			Intent intent = new Intent(HistoryDataActivity.this,ShowHisDataActicity.class);
+			Intent intent = new Intent( HistoryDataActivity.this, ShowHisDataActicity.class );
 			intent.putExtra( "cells", (Serializable) cells );
-			startActivity( intent);
-		} else if (cells.size() == 0) {
-			Toast.makeText( this, "您所检索的数据不存在,请选择适合的条件", Toast.LENGTH_SHORT ).show();
+			startActivity( intent );
 		} else {
-			Toast.makeText( this, "请求数据错误", Toast.LENGTH_SHORT ).show();
+			cells.size();
+			Toast.makeText( this, "您所检索的数据不存在,请选择适合的条件", Toast.LENGTH_SHORT ).show();
 		}
 
 

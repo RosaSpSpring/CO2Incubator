@@ -18,7 +18,7 @@
 
         <TextView
             android:id="@+id/tv_name_his_show"
-            android:text="名称/批次"
+            android:text="@string/name_generation"
             android:layout_weight="2"
             style="@style/enpandablelistview_parent_layout_style"
             />
@@ -26,7 +26,7 @@
         <TextView
 
             android:id="@+id/tv_daici_his_show"
-            android:text="代次"
+            android:text="@string/batch"
             android:layout_weight="1"
             style="@style/enpandablelistview_parent_layout_style"
             />
@@ -34,27 +34,27 @@
         <TextView
             android:id="@+id/tv_caozuo_his_show"
             android:layout_weight="1"
-            android:text="操作"
+            android:text="@string/operation"
             style="@style/enpandablelistview_parent_layout_style"
             />
 
         <TextView
             android:id="@+id/tv_pingshu_his_show"
             android:layout_weight="1"
-            android:text="瓶数"
+            android:text="@string/the_number_of_bottles"
             style="@style/enpandablelistview_parent_layout_style"
             />
 
         <TextView
             android:id="@+id/tv_date_his_show"
-            android:text="日期"
+            android:text="@string/date"
             android:layout_weight="2"
             style="@style/enpandablelistview_parent_layout_style"
             />
 
         <TextView
             android:id="@+id/tv_operator_his_show"
-            android:text="操作人"
+            android:text="@string/operator"
             android:layout_weight="2"
             style="@style/enpandablelistview_parent_layout_style"
             />

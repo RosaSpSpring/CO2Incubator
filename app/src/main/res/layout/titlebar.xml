@@ -8,7 +8,7 @@
     android:layout_height="48dp">
     <TextView
         android:id="@+id/title_text"
-        android:text="环境参数"
+        android:text="@string/environment_params"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"

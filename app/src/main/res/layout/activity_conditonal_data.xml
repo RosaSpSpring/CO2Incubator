@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:padding="4dp"
-            android:text="条件检索"
+            android:text="@string/condition_search"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"/>
@@ -52,7 +52,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="2dp"
                 android:layout_marginBottom="9dp"
-                android:text="名称/批次"
+                android:text="@string/name_generation"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
@@ -73,7 +73,7 @@
                 android:layout_marginStart="12dp"
                 android:autofillHints="请输入名称/批次"
                 android:background="@drawable/bg_con_search_et"
-                android:hint="请输入名称/批次"
+                android:hint="@string/input_name_generation"
                 android:inputType="text"
                 android:lines="1"
                 android:paddingStart="10dp"
@@ -102,7 +102,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="2dp"
                 android:layout_marginBottom="9dp"
-                android:text="代次"
+                android:text="@string/batch"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/et_input_daici"
@@ -123,7 +123,7 @@
                 android:layout_marginBottom="8dp"
                 android:autofillHints="请输入代次"
                 android:background="@drawable/bg_con_search_et"
-                android:hint="请输入代次"
+                android:hint="@string/input_batch"
                 android:inputType="text"
                 android:lines="1"
                 android:paddingStart="10dp"
@@ -170,7 +170,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginBottom="9dp"
                 android:gravity="center_vertical|start"
-                android:text="日期"
+                android:text="@string/date"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/rg1"
@@ -199,20 +199,20 @@
                     android:id="@+id/all_month"
                     style="@style/condition_search_radiobutton_style"
                     android:layout_marginStart="12dp"
-                    android:text="全部"/>
+                    android:text="@string/all"/>
 
                 <RadioButton
                     android:id="@+id/one_month"
                     style="@style/condition_search_radiobutton_style"
                     android:layout_marginStart="18dp"
-                    android:text="1个月"/>
+                    android:text="@string/one_month"/>
 
                 <RadioButton
                     android:id="@+id/two_month"
                     style="@style/condition_search_radiobutton_style"
                     android:layout_marginStart="18dp"
                     android:layout_marginEnd="12dp"
-                    android:text="2个月"/>
+                    android:text="@string/two_month"/>
             </RadioGroup>
 
             <RadioGroup
@@ -233,13 +233,13 @@
                     android:id="@+id/three_month"
                     style="@style/condition_search_radiobutton_style"
                     android:layout_marginStart="12dp"
-                    android:text="3个月"/>
+                    android:text="@string/three_month"/>
 
                 <RadioButton
                     android:id="@+id/six_month"
                     style="@style/condition_search_radiobutton_style"
                     android:layout_marginStart="18dp"
-                    android:text="6个月"/>
+                    android:text="@string/six_month"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -277,7 +277,7 @@
             android:background="@drawable/bg_reset_selector"
             android:gravity="center"
             android:padding="1dp"
-            android:text="重置"
+            android:text="@string/button_reset"
             android:textColor="#000000"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -298,7 +298,7 @@
             android:background="@drawable/bg_complete_selector"
             android:gravity="center"
             android:padding="1dp"
-            android:text="完成"
+            android:text="@string/button_complete"
             android:textColor="#ffffff"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"

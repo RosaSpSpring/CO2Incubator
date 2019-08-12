@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -33,19 +32,19 @@
             android:id="@+id/rb_param_frame"
             android:drawableTop="@drawable/sur_param_selector"
             style="@style/RG_Main_Style"
-            android:text="环境参数"/>
+            android:text="@string/environment_params"/>
 
         <RadioButton
             android:id="@+id/rb_curdata_frame"
             android:drawableTop="@drawable/cur_data_selector"
             style="@style/RG_Main_Style"
-            android:text="当前数据"/>
+            android:text="@string/current_datas"/>
 
         <RadioButton
             android:id="@+id/rb_hisdata_frame"
             android:drawableTop="@drawable/his_data_selector"
             style="@style/RG_Main_Style"
-            android:text="历史数据"/>
+            android:text="@string/history_datas"/>
     </RadioGroup>
 
 </LinearLayout>

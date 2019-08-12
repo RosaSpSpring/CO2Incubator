@@ -134,7 +134,12 @@ public class EnvironmentParamFragment extends BaseFragment {
 		mTemperatureSetPoint2 = view.findViewById( R.id.temperature_set_point_2 );
 		mTemperatureSetPoint = view.findViewById( R.id.temperature_set_point );
 		mCo2SetPoint = view.findViewById( R.id.co2_set_point );
-
+		getCO2();
+		getCO2Set();
+		getHumanity();
+		getTemprature();
+		getTempratureSet();
+		getAlarmData();
 
 //		handler.postDelayed( mRunnable, 1000 );
 
@@ -306,11 +311,11 @@ public class EnvironmentParamFragment extends BaseFragment {
 		Call<ResponseBody> call = alarmIn.getAlarmInfo();
 		call.enqueue( new Callback<ResponseBody>() {
 			@Override
-			public void onResponse(@NotNull Call<ResponseBody> call, @NotNull Response<ResponseBody> response) {
-				String result = null;
+			public void onResponse( Call<ResponseBody> call,  Response<ResponseBody> response) {
+
 				try {
 					assert response.body() != null;
-					result = response.body().string();
+					String result = response.body().string();
 					Log.e( TAG, "resp" + result );
 					parseAlarmData( result );
 				} catch (IOException e) {
