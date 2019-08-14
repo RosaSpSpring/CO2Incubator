@@ -92,12 +92,7 @@ public class ConditionalSearchActivity extends Activity {
 
 	private void initListener() {
 		//返回上一界面
-		mIvConSerBack.setOnClickListener( new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				ConditionalSearchActivity.this.finish();
-			}
-		} );
+		mIvConSerBack.setOnClickListener( v -> ConditionalSearchActivity.this.finish() );
 	}
 
 	private void initData() {
@@ -106,8 +101,8 @@ public class ConditionalSearchActivity extends Activity {
 
 	private void initView() {
 
-		mRg1 = (RadioGroup) findViewById( R.id.rg1 );
-		mRg2 = (RadioGroup) findViewById( R.id.rg2 );
+		mRg1 = findViewById( R.id.rg1 );
+		mRg2 = findViewById( R.id.rg2 );
 
 		mRg1.clearCheck(); // this is so we can start fresh, with no selection on both RadioGroups
 		mRg2.clearCheck();
@@ -119,50 +114,44 @@ public class ConditionalSearchActivity extends Activity {
 		int chkId2 = mRg2.getCheckedRadioButtonId();
 		int realCheck = chkId1 == -1 ? chkId2 : chkId1;
 		//重置按钮,重置所有控件
-		mTvReset.setOnClickListener( new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mEtInputPici.setText( "" );
-				mEtInputDaici.setText( "" );
-				mRg1.clearCheck(); // this is so we can start fresh, with no selection on both RadioGroups
-				mRg2.clearCheck();
+		mTvReset.setOnClickListener( v -> {
+			mEtInputPici.setText( "" );
+			mEtInputDaici.setText( "" );
+			mRg1.clearCheck(); // this is so we can start fresh, with no selection on both RadioGroups
+			mRg2.clearCheck();
 
-			}
 		} );
 
 		//完成按钮,点击监听开始联网请求条件筛选数据
-		mTvComplete.setOnClickListener( new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				/**
-				 * 文本放到这里是为了当监听触发的时候,会刷新文本,获取文本否则只是空字符串
-				 */
-				inputdaici= mEtInputDaici.getText().toString().trim();
-				inputpici =  mEtInputPici.getText().toString().trim();
-				Retrofit build = new Retrofit.Builder().baseUrl( Constants.BASEURL ).addConverterFactory( GsonConverterFactory.create() ).build();
-				CurDataSearchIn curDataSearchIn = build.create( CurDataSearchIn.class );
-				Call<ResponseBody> call = curDataSearchIn.getCurDataSearch( inputpici, inputdaici, position );
-				call.enqueue( new Callback<ResponseBody>() {
-					@Override
-					public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-						try {
-							String json = response.body().string();
-							Log.e( TAG, "json" + json );
-							Log.e( TAG, "inputpici" + inputpici + "---------inptdaici" + inputdaici + "-------------time" + position );
-							initData( json );
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-
+		mTvComplete.setOnClickListener( v -> {
+			/*
+			  文本放到这里是为了当监听触发的时候,会刷新文本,获取文本否则只是空字符串
+			 */
+			inputdaici= mEtInputDaici.getText().toString().trim();
+			inputpici =  mEtInputPici.getText().toString().trim();
+			Retrofit build = new Retrofit.Builder().baseUrl( Constants.BASEURL ).addConverterFactory( GsonConverterFactory.create() ).build();
+			CurDataSearchIn curDataSearchIn = build.create( CurDataSearchIn.class );
+			Call<ResponseBody> call = curDataSearchIn.getCurDataSearch( inputpici, inputdaici, position );
+			call.enqueue( new Callback<ResponseBody>() {
+				@Override
+				public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+					try {
+						String json = response.body().string();
+						Log.e( TAG, "json" + json );
+						Log.e( TAG, "inputpici" + inputpici + "---------inptdaici" + inputdaici + "-------------time" + position );
+						initData( json );
+					} catch (IOException e) {
+						e.printStackTrace();
 					}
 
-					@Override
-					public void onFailure(Call<ResponseBody> call, Throwable t) {
-						Log.e( TAG, "当前数据检索失败" );
-					}
-				} );
+				}
 
-			}
+				@Override
+				public void onFailure(Call<ResponseBody> call, Throwable t) {
+					Log.e( TAG, "当前数据检索失败" );
+				}
+			} );
+
 		} );
 
 
@@ -172,7 +161,7 @@ public class ConditionalSearchActivity extends Activity {
 	private void initData(String json) {
 		Result res = JSON.parseObject( json, Result.class );
 		Collections.sort( res.getData() );
-		List<Cell> cells = new ArrayList<Cell>();
+		List<Cell> cells = new ArrayList<>();
 		for(Cell cell:res.getData()){
 			if(cell.getCid().equalsIgnoreCase("0")){
 				cells.add(cell);
@@ -192,10 +181,8 @@ public class ConditionalSearchActivity extends Activity {
 			Intent intent = new Intent( ConditionalSearchActivity.this, ShowCurrentDataActicity.class );
 			intent.putExtra( "cells", (Serializable) cells );
 			startActivity( intent );
-		} else if (cells.size() == 0) {
-			Toast.makeText( this, "您所检索的数据不存在,请选择适合的条件", Toast.LENGTH_SHORT ).show();
 		} else {
-			Toast.makeText( this, "请求数据错误", Toast.LENGTH_SHORT ).show();
+			Toast.makeText( this, "您所检索的数据不存在,请选择适合的条件", Toast.LENGTH_SHORT ).show();
 		}
 
 	}
