@@ -64,9 +64,7 @@ public class HistoryAlarmAdapter extends BaseAdapter {
 			convertView.setTag( mHolder );
 			mHolder.mTypeTv = convertView.findViewById( R.id.type_tv );
 			mHolder.mTypeTvData = convertView.findViewById( R.id.type_tv_data );
-
 			mHolder.mAlarmTime = convertView.findViewById( R.id.alarm_time );
-
 		} else {
 			mHolder = (ViewHolder) convertView.getTag();
 		}

@@ -20,14 +20,15 @@ public class CO2IncubatorApplication extends Application {
 	/**
 	 * 在所有组件被创建之前执行
 	 */
-	public Context context ;
+	public Context context;
+
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		context =  getApplicationContext();
+		context = getApplicationContext();
 
 
-		JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志
-		JPushInterface.init(this); // 初始化 JPush
+		JPushInterface.setDebugMode( true );    // 设置开启日志,发布时请关闭日志
+		JPushInterface.init( this ); // 初始化 JPush
 	}
 }

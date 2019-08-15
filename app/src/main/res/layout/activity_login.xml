@@ -51,9 +51,10 @@
         android:layout_height="0dp"
         android:background="@android:color/transparent"
         android:hint="@string/input_password"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:lines="1"
         android:maxLength="8"
+        android:paddingStart="5dp"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintHeight_default="percent"
@@ -107,4 +108,16 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView"/>
+
+    <CheckBox
+        android:id="@+id/is_remember_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/is_remember_pwd"
+        app:theme="@style/cb_login"
+        app:layout_constraintEnd_toEndOf="@+id/login_password"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/login_password"
+        app:layout_constraintTop_toBottomOf="@+id/login_password"/>
 </android.support.constraint.ConstraintLayout>

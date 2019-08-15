@@ -304,7 +304,7 @@ public class EnvironmentParamFragment extends BaseFragment {
 	}
 
 	private  void getAlarmData() {
-		Retrofit retrofit = builder.baseUrl( Constants.BASEALARM ).addConverterFactory( GsonConverterFactory.create() ).build();
+		Retrofit retrofit = builder.baseUrl( Constants.BASEURL ).addConverterFactory( GsonConverterFactory.create() ).build();
 		//		EvironmentAPI evironmentAPI = retrofit.create( EvironmentAPI.class );
 		//		Call<ResponseBody> call = evironmentAPI.getCo2AlarmInfo();
 		AlarmIn alarmIn = retrofit.create( AlarmIn.class );
