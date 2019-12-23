@@ -95,11 +95,10 @@ public class LoginActivity extends Activity {
 	}
 
 	private void loginCheck(String pwd) {
-		if ("" .equals(pwd)) {
-
+		if ("".equals(pwd)) {
 			Toast.makeText(this,"密码不能为空", Toast.LENGTH_SHORT).show();
 		}else {
-			if ("123" .equals( pwd )){
+			if ("keyone".equals( pwd )){
 				startActivity( new Intent( LoginActivity.this, MainActivity.class ) );
 				finish();
 			}else{

@@ -14,13 +14,10 @@ public class Constants {
 	//BaseUrl
 //	public static final String BASEURL = "http://192.168.104.190:8080/";
 //	public static final String BASEURL = "http://192.168.110.1:8080/";
-//	public static final String BASEURL = "http://www.rosasp.club/";
 	public static final String BASEURL = "http://192.168.104.163:8001/";
-//	public static final String BASEURL = "http://www.rosasp.club/";
 
 	//报警信息地址http://192.168.104.174:8080/warn/getByMacID?macID=1
 	public static final String BASEALARM = "http://192.168.104.182:8001/";
-//	public static final String BASEALARM = "http://www.rosasp.club/";
 	//当前数据
 //	public static final String CURRENTDATA = "co2Incubator/cur_data.json";
 	public static final String CURRENTDATA = "cellrecord/getTemp";
